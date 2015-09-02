@@ -46,7 +46,7 @@ Currently the follow stages are implemented, but writing new stages are supper s
 [filter](https://github.com/go-gonzo/filter) A collection of stages for filtering files.  
 [fs](https://github.com/go-gonzo/fs) Read and Write from Disk.  
 [gcss](https://github.com/go-gonzo/gcss) Compile gcss to css.  
-[gin](https://github.com/go-gonzo/gin) A Go Server lifereload utlity.  
+[gin](https://github.com/go-gonzo/gin) A Go Server livereload utlity.  
 [github](https://github.com/go-gonzo/github) Grab files from github.  
 [html](https://github.com/go-gonzo/html) Minify HTML  
 [js](https://github.com/go-gonzo/js) Minify JavaScript  
@@ -63,14 +63,24 @@ Currently the follow stages are implemented, but writing new stages are supper s
 To compile scss files, minify the output, write it to disk, lifereload in browser, and upload it to Amazon S3, this all you need:
 
 ```go
+s3conf := s3.Config{
+	AccessKey: os.Getenv("S3_ACCESSKEY"),
+	SecretKey: os.Getenv("S3_SECRETE"),
+	Name:      os.Getenv("S3_NAME"),
+	Region:    s3.APSoutheast2,
+	Perm:      s3.PublicRead,
+}
+
+lr := livereload.New(livereload.Config{LiveCSS: true})
+
 err := s.Src(context.Background(), "app/style.scss").Then(
-    util.Trim("app"),
-    scss.Compile(),
-    css.Minify(),
-    fs.Dest("./public/assets/"),
-    lr.Reload(),
-    s3.Put(s3conf),
-    )
+	util.Trim("app"),
+	scss.Compile(),
+	css.Minify(),
+	fs.Dest("./public/assets/"),
+	lr.Reload(),
+	s3.Put(s3conf),
+)
 //Handle any _fatal_ error.
 ```
 
