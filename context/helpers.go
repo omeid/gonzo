@@ -3,8 +3,9 @@ package context
 import (
 	"time"
 
-	"github.com/Sirupsen/logrus"
 	"golang.org/x/net/context"
+
+	"github.com/Sirupsen/logrus"
 )
 
 func Background() Context {
@@ -30,11 +31,12 @@ func WithCancel(parent Context) (Context, context.CancelFunc) {
 		Entry:   entry,
 	}
 
-	return ctx, cancel
+	return &ctx, cancel
 }
 
 func WithDeadline(parent Context, deadline time.Time) (Context, context.CancelFunc) {
 	c, cancel := context.WithDeadline(parent, deadline)
+
 	var entry *logrus.Entry
 	if ctx, ok := parent.(*ctx); ok {
 		entry = ctx.Entry
@@ -42,7 +44,7 @@ func WithDeadline(parent Context, deadline time.Time) (Context, context.CancelFu
 		entry = std
 	}
 
-	ctx := ctx{
+	ctx := &ctx{
 		Context: c,
 		Entry:   entry,
 	}
@@ -52,6 +54,7 @@ func WithDeadline(parent Context, deadline time.Time) (Context, context.CancelFu
 
 func WithTimeout(parent Context, timeout time.Duration) (Context, context.CancelFunc) {
 	c, cancel := context.WithTimeout(parent, timeout)
+
 	var entry *logrus.Entry
 	if ctx, ok := parent.(*ctx); ok {
 		entry = ctx.Entry
@@ -59,7 +62,7 @@ func WithTimeout(parent Context, timeout time.Duration) (Context, context.Cancel
 		entry = std
 	}
 
-	ctx := ctx{
+	ctx := &ctx{
 		Context: c,
 		Entry:   entry,
 	}
@@ -69,6 +72,7 @@ func WithTimeout(parent Context, timeout time.Duration) (Context, context.Cancel
 
 func WithValue(parent Context, key string, value interface{}) Context {
 	c := context.WithValue(parent, key, value)
+
 	var entry *logrus.Entry
 	if ctx, ok := parent.(*ctx); ok {
 		entry = ctx.Entry
@@ -76,7 +80,7 @@ func WithValue(parent Context, key string, value interface{}) Context {
 		entry = std
 	}
 
-	ctx := ctx{
+	ctx := &ctx{
 		Context: c,
 		Entry:   entry.WithField(key, value),
 	}

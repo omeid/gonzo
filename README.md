@@ -3,15 +3,9 @@
 </p>
 
 > _**Heads up!**_ Gonzo is being polished at this stage so some APIs may change.  
-> Gonzo is a refinment of Slurp.
 
 # Gonzo [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/omeid/gonzo)
-Go file-processing Framework based on Go [Pipelines](http://blog.golang.org/pipelines) concept.
-
-- Convention over configuration
-- Explicit is better than implicit.
-- Do one thing. Do it well.
-- ...
+File Processing Framework based on Go [Pipelines](http://blog.golang.org/pipelines).
 
 ### Use Case
 - Web App Development
@@ -20,7 +14,7 @@ Go file-processing Framework based on Go [Pipelines](http://blog.golang.org/pipe
 - Content Mangement Systems
 
 ### Why?
-For an explanation of why Gonzo was written read on its predecessor, [slurp](https://github.com/omeid/slurp)
+For an explanation of why Gonzo was written read on its predecessor, [slurp](https://github.com/omeid/slurp).
 
 
 ## Design
