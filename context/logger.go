@@ -1,8 +1,34 @@
 package context
 
-import "github.com/Sirupsen/logrus"
+import (
+	"os"
 
-var std = logrus.NewEntry(logrus.New())
+	"github.com/Sirupsen/logrus"
+)
+
+var std *logrus.Entry
+
+func init() {
+
+	l := logrus.New()
+	switch os.Getenv("GONZO_LOG") {
+	case "debug":
+		l.Level = logrus.InfoLevel
+	case "info":
+		l.Level = logrus.InfoLevel
+	case "warn":
+		l.Level = logrus.WarnLevel
+	case "error":
+		l.Level = logrus.ErrorLevel
+	case "fatal":
+		l.Level = logrus.FatalLevel
+	case "panic":
+		l.Level = logrus.PanicLevel
+	default:
+		l.Level = logrus.InfoLevel
+	}
+	std = logrus.NewEntry(l)
+}
 
 type Logger interface {
 	Debug(args ...interface{})

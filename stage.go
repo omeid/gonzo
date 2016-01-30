@@ -11,7 +11,6 @@ func makestage(stage Stage, ctx context.Context, in <-chan File) Pipe {
 		close(out)
 		if err != nil {
 			cancel()
-			ctx.Error(err)
 		}
 	}()
 
