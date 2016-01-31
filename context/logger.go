@@ -1,6 +1,7 @@
 package context
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/Sirupsen/logrus"
@@ -10,10 +11,11 @@ var std *logrus.Entry
 
 func init() {
 
+	fmt.Println(os.Getenv("GONZO_LOG"))
 	l := logrus.New()
 	switch os.Getenv("GONZO_LOG") {
 	case "debug":
-		l.Level = logrus.InfoLevel
+		l.Level = logrus.DebugLevel
 	case "info":
 		l.Level = logrus.InfoLevel
 	case "warn":
