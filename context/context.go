@@ -1,8 +1,8 @@
 package context
 
 import (
+	"context"
 	"github.com/Sirupsen/logrus"
-	"golang.org/x/net/context"
 )
 
 var Canceled = context.Canceled

@@ -3,7 +3,7 @@ package context
 import (
 	"time"
 
-	"golang.org/x/net/context"
+	"context"
 
 	"github.com/Sirupsen/logrus"
 )
