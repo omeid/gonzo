@@ -79,5 +79,5 @@ err := s.Src(context.Background(), "app/style.scss").Then(
 ```
 
 ## TODO:
-- Finish this doucment.
+- Finish this document.
 - Add tests
