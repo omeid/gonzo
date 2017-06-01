@@ -7,16 +7,6 @@
 # Gonzo [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/omeid/gonzo)
 File Processing Framework based on Go [Pipelines](http://blog.golang.org/pipelines).
 
-### Use Case
-- Web App Development
-- Log Analysis
-- Continuous Integration
-- Content Mangement Systems
-
-### Why?
-For an explanation of why Gonzo was written read on its predecessor, [slurp](https://github.com/omeid/slurp).
-
-
 ## Design
 
 Gonzo is made up of File, Context, Stages, and Pipes.
@@ -24,6 +14,8 @@ Gonzo is made up of File, Context, Stages, and Pipes.
 
 ### File
 File is an interface that mimics os.File with some additional APIs.
+
+
 
 ### Pipes
 Pipe holde a channel of files, a context for logging and deadlines, and a simple interface to pass files through a Stage.
