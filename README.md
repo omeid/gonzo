@@ -2,7 +2,7 @@
 <img  src="docs/gonzo.png">
 </p>
 
-> _**Heads up!**_ Gonzo is being polished at this stage so some APIs may change.
+> _**Heads up!**_ Gonzo is being polished at this stage so some APIs may change.  
 
 # Gonzo [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/omeid/gonzo)
 File Processing Framework based on Go [Pipelines](http://blog.golang.org/pipelines).
@@ -25,25 +25,25 @@ Stages are where files are handled for processing.
 
 Currently the follow stages are implemented, but writing new stages are supper simple.
 
-[ace](https://github.com/go-gonzo/ace) Compile Ace templates.
-[archive/tar](https://github.com/go-gonzo/archive/tar) Work with tar archives.
-[archive/zip](https://github.com/go-gonzo/archive/zip) Work with zip Archives.
-[css](https://github.com/go-gonzo/js) Minify CSS
-[filter](https://github.com/go-gonzo/filter) A collection of stages for filtering files.
-[fs](https://github.com/go-gonzo/fs) Read and Write from Disk.
-[gcss](https://github.com/go-gonzo/gcss) Compile gcss to css.
-[gin](https://github.com/go-gonzo/gin) A Go Server livereload utlity.
-[github](https://github.com/go-gonzo/github) Grab files from github.
-[html](https://github.com/go-gonzo/html) Minify HTML
-[js](https://github.com/go-gonzo/js) Minify JavaScript
-[livereload](https://github.com/go-gonzo/livereload) Livereload
-[passthrough](https://github.com/go-gonzo/passthrough) Pass files through any executable.
-[resources](https://github.com/go-gonzo/resources) go-resources binding.
-[s3](https://github.com/go-gonzo/s3) Put files to S3.
-[scss](https://github.com/go-gonzo/scss) Compile SCSS to CSS.
-[util](https://github.com/go-gonzo/util) Some helpful utlites.
-[watch](https://github.com/go-gonzo/watch) Watch files for change.
-[web](https://github.com/go-gonzo/web) Grab files from any URL.
+[ace](https://github.com/go-gonzo/ace) Compile Ace templates.  
+[archive/tar](https://github.com/go-gonzo/archive/tar) Work with tar archives.  
+[archive/zip](https://github.com/go-gonzo/archive/zip) Work with zip Archives.  
+[css](https://github.com/go-gonzo/js) Minify CSS  
+[filter](https://github.com/go-gonzo/filter) A collection of stages for filtering files.  
+[fs](https://github.com/go-gonzo/fs) Read and Write from Disk.  
+[gcss](https://github.com/go-gonzo/gcss) Compile gcss to css.  
+[gin](https://github.com/go-gonzo/gin) A Go Server livereload utlity.  
+[github](https://github.com/go-gonzo/github) Grab files from github.  
+[html](https://github.com/go-gonzo/html) Minify HTML  
+[js](https://github.com/go-gonzo/js) Minify JavaScript  
+[livereload](https://github.com/go-gonzo/livereload) Livereload  
+[passthrough](https://github.com/go-gonzo/passthrough) Pass files through any executable.  
+[resources](https://github.com/go-gonzo/resources) go-resources binding.  
+[s3](https://github.com/go-gonzo/s3) Put files to S3.  
+[scss](https://github.com/go-gonzo/scss) Compile SCSS to CSS.  
+[util](https://github.com/go-gonzo/util) Some helpful utlites.  
+[watch](https://github.com/go-gonzo/watch) Watch files for change.  
+[web](https://github.com/go-gonzo/web) Grab files from any URL.  
 ## Example
 
 To compile scss files, minify the output, write it to disk, lifereload in browser, and upload it to Amazon S3, this all you need:
