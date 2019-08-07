@@ -2,7 +2,7 @@ package context
 
 import (
 	"context"
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 )
 
 var Canceled = context.Canceled
